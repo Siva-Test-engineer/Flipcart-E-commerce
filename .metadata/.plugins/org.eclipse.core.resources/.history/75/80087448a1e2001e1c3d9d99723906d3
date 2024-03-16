@@ -1,0 +1,8 @@
+package Flipcart.QA.cucumber;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+
+@CucumberOptions(features ="src\\test\\java\\Flipcart\\QA\\cucumber", glue = "Flipcart.QA.cucumber", monochrome = false, plugin = {"html:target/cucumber.html"})
+public class TestNGTestRunner extends AbstractTestNGCucumberTests{
+}

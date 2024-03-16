@@ -1,0 +1,23 @@
+package Flipcart.QA.cucumber;
+
+import java.io.IOException;
+
+import Filpcart.QA.pageobject.Homepage;
+import Flipcart.QA.TestComponent.Baseclass;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+
+public class Stepdefinitionimpl extends Baseclass{
+	Homepage home_page;
+	@Given("^Searching the product (.+) in search box$")
+	public void Searching_the_product_in_searchBox(String product) throws IOException {
+		home_page = launchApplication();
+	}
+	
+	@When("Select the newest laptop filter")
+	public void Select_the_newest_laptop_filter() {
+		
+	}
+	
+
+}

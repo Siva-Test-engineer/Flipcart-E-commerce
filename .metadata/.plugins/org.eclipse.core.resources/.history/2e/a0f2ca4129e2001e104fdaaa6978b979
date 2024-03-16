@@ -1,0 +1,13 @@
+package Filpcart.QA.Test;
+
+import org.testng.annotations.Test;
+
+public class Filpcartorderplacing extends Baseclass {
+
+	@Test
+	public void orderplacing() {
+		
+	}
+	
+
+}

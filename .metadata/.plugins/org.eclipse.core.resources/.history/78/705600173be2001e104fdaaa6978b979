@@ -1,0 +1,10 @@
+package Flipcart.QA.cucumber;
+
+public class Stepdefinitionimpl {
+	
+	@Given("Searching the product (.+) in search box")
+	public void Searching_the_product_in_searchBox(String product) {
+		
+	}
+
+}

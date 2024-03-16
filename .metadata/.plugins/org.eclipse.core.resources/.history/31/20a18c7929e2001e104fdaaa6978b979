@@ -1,0 +1,19 @@
+package Filpcart.QA.Test;
+
+import java.io.IOException;
+
+import org.testng.annotations.Test;
+
+import Filpcart.QA.pageobject.Homepage;
+import Flipcart.QA.TestComponent.Baseclass;
+
+public class Filpcartorderplacing extends Baseclass {
+	Homepage home_page;
+
+	@Test
+	public void orderplacing() throws IOException {
+		home_page = launchApplication();
+	    	
+	}
+
+}

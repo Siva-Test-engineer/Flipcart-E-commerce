@@ -1,0 +1,37 @@
+package Filpcart.QA.pageobject;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Shoppage {
+	WebDriver driver;
+
+	public Shoppage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(xpath = "//div[text()='Newest First']")
+	WebElement newestproductWebElement;
+
+	@FindBy(xpath = "//div[@class='_4rR01T']")
+	List<WebElement> productWebElement;
+
+	public void newestProduct() {
+		Actions a = new Actions(driver);
+		a.moveToElement(newestproductWebElement).click().build().perform();
+	}
+
+	public Productdescription selectingproduct() throws InterruptedException {
+		Thread.sleep(4000);
+		productWebElement.get(0).click();
+		Productdescription prod = new Productdescription(driver);
+		return prod;
+
+	}
+}

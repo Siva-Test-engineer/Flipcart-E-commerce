@@ -1,0 +1,27 @@
+package Filpcart.QA.pageobject;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Cartpage {
+	WebDriver driver;
+	Set<String> windows = driver.getWindowHandles();
+	Iterator<String> it = windows.iterator();
+	String parentId = it.next();
+	String childId = it.next();
+
+	public Cartpage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(xpath = "//div[text()='Newest First']")
+	WebElement newestproductWebElement;
+	
+
+}

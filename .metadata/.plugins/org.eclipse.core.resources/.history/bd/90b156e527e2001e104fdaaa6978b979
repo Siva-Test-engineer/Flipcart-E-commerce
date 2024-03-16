@@ -1,0 +1,10 @@
+package Filpcart.QA.Test;
+
+public class Filpcartorderplacing {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

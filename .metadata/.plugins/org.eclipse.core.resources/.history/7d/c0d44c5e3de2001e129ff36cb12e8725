@@ -1,0 +1,19 @@
+package Flipcart.QA.cucumber;
+
+import Filpcart.QA.pageobject.Homepage;
+import Flipcart.QA.TestComponent.Baseclass;
+
+public class Stepdefinitionimpl extends Baseclass{
+	Homepage home_page;
+	@Given("^Searching the product (.+) in search box$")
+	public void Searching_the_product_in_searchBox(String product) {
+		home_page = launchApplication();
+	}
+	
+	@When("Select the newest laptop filter")
+	public void Select_the_newest_laptop_filter() {
+		
+	}
+	
+
+}

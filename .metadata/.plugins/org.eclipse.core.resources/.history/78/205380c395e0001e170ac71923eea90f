@@ -1,0 +1,53 @@
+package Filpcart.QA.Test;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class standaloneTest {
+
+	public static void main(String[] args) {
+		String laptop_need_to_select_in_shoppage = "Apple 2020 Macbook Air Apple M1 - (8 GB/256 GB SSD/Mac OS Big Sur) MGN93HN/A";
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.get("https://www.flipkart.com/");
+		WebElement move = driver.findElement(By.xpath("//form[@class='_2rslOn header-form-search']"));
+		Actions a = new Actions(driver);
+		a.moveToElement(move).click().sendKeys("Laptop").sendKeys(Keys.ENTER).perform();
+		List<WebElement> laptop_Webelement = driver.findElements(By.xpath("//div[@class='_4rR01T']"));
+		System.out.println(laptop_Webelement);
+		for (WebElement i : laptop_Webelement) {
+			System.out.println(i.getText());
+			if (i.getText().contentEquals(laptop_need_to_select_in_shoppage)) {
+				String laptopname = i.getText();
+				i.click();
+			}
+		}
+
+	}
+
+}
+
+/*
+ * Open Flipkart Website: Open the ShopNow website: https://www.flipkart.com
+ * Verify that the homepage loads successfully.
+ * --------------------------------------------- Search and Add to Cart: In the
+ * search bar, type "laptop" and press Enter. Click on one of the search results
+ * to view the product details. Add the selected laptop to the shopping cart.
+ * ------------------------------------------------ Proceed to Checkout:
+ * Navigate to the shopping cart. Verify that the correct item is in the cart.
+ * Click on the "Proceed to Checkout" button. User Authentication: On the login
+ * page, enter valid credentials (username and password) to log in. Verify that
+ * the user is successfully logged in. Shipping Information: Enter valid
+ * shipping information (address, city, state, and zip code). Proceed to the
+ * next step. Payment Information: Choose a payment method (credit card, for
+ * example). Review Order: Verify the order summary. Do not proceed to the final
+ * order placement.
+ */

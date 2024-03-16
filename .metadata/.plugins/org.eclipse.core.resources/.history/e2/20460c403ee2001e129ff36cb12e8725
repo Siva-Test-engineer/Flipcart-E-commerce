@@ -1,0 +1,38 @@
+package Flipcart.QA.cucumber;
+
+import java.io.IOException;
+
+import Filpcart.QA.pageobject.Homepage;
+import Filpcart.QA.pageobject.Shoppage;
+import Flipcart.QA.TestComponent.Baseclass;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class Stepdefinitionimpl extends Baseclass{
+	Homepage home_page;
+	Shoppage shop_page;
+	
+	@Given("I landed on filpcart Website")
+	public void I_landed_on_filpcart_Website() throws IOException {
+		home_page = launchApplication();
+	}
+	
+	@Given("^Searching the product (.+) in search box$")
+	public void Searching_the_product_in_searchBox(String product) throws IOException {
+		shop_page = home_page.searchingProduct(product);
+	}
+	
+	@When("Select the newest laptop filter")
+	public void Select_the_newest_laptop_filter() {
+		shop_page.newestProduct();
+	}
+	
+	@Then("Select the laptop")
+	public void Select_the_laptop() {
+		
+	}
+	@And("")
+	public void Add_the_product_to_cart
+}

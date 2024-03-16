@@ -1,0 +1,9 @@
+package Filpcart.QA.pageobject;
+
+public class Cartpage {
+
+	public Cartpage() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

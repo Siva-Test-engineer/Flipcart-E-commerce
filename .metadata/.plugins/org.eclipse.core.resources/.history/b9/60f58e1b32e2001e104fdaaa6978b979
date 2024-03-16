@@ -1,0 +1,26 @@
+package Filpcart.QA.Test;
+
+import java.io.IOException;
+
+import org.testng.annotations.Test;
+import Filpcart.QA.pageobject.*;
+import Flipcart.QA.TestComponent.Baseclass;
+
+public class Filpcartorderplacing extends Baseclass {
+	Homepage home_page;
+	String laptop_need_to_select_in_shoppage = "Apple MacBook Air Apple M3 - (8 GB/256 GB SSD/macOS Sonoma) MRXT3HN/A";
+
+	@Test
+	public void orderplacing() throws IOException {
+		home_page = launchApplication();
+		home_page.launchapp("https://www.flipkart.com/");
+		Shoppage shop_page = home_page.searchingProduct("Laptop");
+		shop_page.newestProduct();
+		Productdescription prod = shop_page.selectingproduct();
+		prod.productcartpage();
+		
+		
+
+	}
+
+}

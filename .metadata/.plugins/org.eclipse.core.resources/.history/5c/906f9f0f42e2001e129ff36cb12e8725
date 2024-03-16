@@ -1,0 +1,6 @@
+package Flipcart.QA.cucumber;
+
+@CucumberOptions()
+public class TestNGTestRunner extends AbstractTestNGCucumberTests {
+
+}
